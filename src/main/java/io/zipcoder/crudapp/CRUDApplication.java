@@ -1,6 +1,6 @@
 package io.zipcoder.crudapp;
 
-import org.h2.server.web.WebServlet;
+import org.apache.catalina.servlets.WebdavServlet;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -15,7 +15,7 @@ public class CRUDApplication {
 
 	@Bean
 	ServletRegistrationBean h2servletRegistration(){
-		ServletRegistrationBean registrationBean = new ServletRegistrationBean( new WebServlet());
+		ServletRegistrationBean registrationBean = new ServletRegistrationBean(new WebdavServlet());
 		registrationBean.addUrlMappings("/console/*");
 		return registrationBean;
 	}
